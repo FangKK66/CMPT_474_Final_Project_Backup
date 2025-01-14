@@ -1,0 +1,15 @@
+server:
+  port: 8222
+spring:
+  #服务名
+  application:
+    name: service-gateway
+  #环境设置：dev、test、prod
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置Nacos地址
+      config:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置中心地址

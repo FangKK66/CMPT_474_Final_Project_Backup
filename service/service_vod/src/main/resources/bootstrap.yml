@@ -1,0 +1,22 @@
+#服务端口
+server:
+  port: 8003
+spring:
+  #服务名
+  application:
+    name: service-vod
+  #环境设置：dev、test、prod
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置Nacos地址
+      config:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置中心地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

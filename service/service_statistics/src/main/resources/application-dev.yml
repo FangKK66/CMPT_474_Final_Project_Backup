@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://34.83.135.3:3306/guli?useSSL=FALSE&serverTimezone=Asia/Shanghai
+    username: root
+    password: 666666
+    hikari:
+      connection-timeout: 60000
+      idle-timeout: 500000
+      max-lifetime: 540000
+      maximum-pool-size: 12
+      minimum-idle: 10
+#      #名字随意，默认为auto-genenrated，便于监控
+      pool-name: GuliHikariPool
+#  # JSON处理时忽略空字段 date格式转换
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  # mapper/xml/*.xml
+  mapper-locations: com/atguigu/staservice/mapper/**/*.xml
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+#

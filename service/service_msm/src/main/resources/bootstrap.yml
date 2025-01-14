@@ -1,0 +1,25 @@
+server:
+  port: 8005
+spring:
+  #服务名
+  application:
+    name: service-msm
+  #环境设置：dev、test、prod
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置Nacos地址
+      config:
+        server-addr: https://nacos-vzrav3344a-uc.a.run.app #配置中心地址
+
+# 激活Sentinel对Feign的支持
+feign:
+  sentinel:     #开启feign对sentinel的支持
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 10000 #连接超时配置 10s 默认都为一秒，时间太短可能会超时
+        readTimeout: 60000 #执行超时配置    60s

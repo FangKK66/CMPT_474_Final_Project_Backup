@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.eduservice.mapper.EduCourseMapper">
+
+    <select id="getPublishCourseInfo" resultType="com.atguigu.eduservice.entity.vo.CoursePublishVo">
+        select c.id       id,
+               c.title    title,
+               cover,
+               lesson_num lessonNum,
+               s1.title   subjectLevelOne,
+               s2.title   subjectLevelTwo,
+               t.name     teacherName,
+               price
+        from edu_course c
+                 left join edu_teacher t on c.teacher_id = t.id
+                 left join edu_subject s1 on c.subject_parent_id = s1.id
+                 left join edu_subject s2 on c.subject_id = s1.id
+        where c.id = #{id}
+    </select>
+
+    <select id="getBaseCourseInfo" resultType="com.atguigu.commonutils.vo.CourseWebVo">
+        select c.id,
+               c.title  title,
+               c.price,
+               c.lesson_num lessonNum,
+               c.cover,
+               c.buy_count buyCount,
+               c.view_count viewCount,
+               d.description,
+               t.id teacherId,
+               t.name teacherName,
+               t.intro,
+               t.avatar,
+               s1.id    subjectLevelOneId,
+               s1.title subjectLevelOne,
+               s2.id    subjectLevelTwoId,
+               s2.title subjectLevelTwo
+        from edu_course c
+                 left join edu_course_description d on c.id = d.id
+                 left join edu_teacher t on c.teacher_id = t.id
+                 left join edu_subject s1 on c.subject_id = s1.id
+                 left join edu_subject s2 on c.subject_parent_id = s2.parent_id
+        where c.id = #{id} limit 1;
+    </select>
+</mapper>

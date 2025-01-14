@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "spring24cmpt474groupproject1",
+  "private_key_id": "3f7d24db021761d96ea92bb8608afa50264a7e5d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8DxJ3I2U9IjOh\nlXDE8ikopmkokLkAZ/C2gmgKUrE8IEZYjRkHPDab/x+gz/7gvMPCeUww922/41qT\noYOzvQuOF+TlNV1wydWGeRfoYG+srQOQSzFKtNGboaMmwfycarKyF6dTv9VYKhz6\n/rpr9j5PR0PrtypBzfJkHRymLlebnCgwKgkDCTII23j8ubquCETpQGwvlhydKht+\nqtLORjCRaNEyw0JDtkih4ZS44ENwYK9EfG0hV6z5w1gkW3R4MI+Z59UQqsUwLsMU\nFoLZLuAwMU6gcaraGhNVmwZTT7EspQNCA1/QsEWTHsFbf4DcxGqZKvJyqnC2sFZx\nZHD93G7BAgMBAAECggEAAwRyxF4pPUaGnZ0wwCu2o+kc4QSGr+BDEDIaJE+Cqg1W\nZJyFtDBL2+OXYsqgj0N/GHhO0+6t5Fcz/nA4FUjLUhMtgj0Znd4SrMXVz6Xnt82G\nPAUNVkKNxguFOymP1ZSHj8iF7//JDwE8uh0fAY1Dv1zUVOB5U1FIJkGicnMGF0RG\ncFdLlSbtiEA3s/g0k38quEQyPXoqnRdvC/l9NdEHJV0VPxy9xTuv1Y56EDyV18zS\n7KBehPmjugsTNgjWxZJsdVkd2z8pFu/jWuuVQhExkN3zPy572aPnSJkbn23l75Pg\nda7PhrxQ/e1o1z2AGupyNqrm6BDNwoTtKYS+wgKIoQKBgQDsDd6ArYbq5FovxAZG\nCZJdUD1p7BtzOCt71juhat6VNIi7Vpk5Zn6sia74BuTkeIjlWyuJKmzfAuCnlykg\nl4ZGRzEsZ6JQWQSdETvvvM3aSNUieJQZs930CtZHrTnNBWgo0oH/shXl8rSLBgkN\ntvl34+dXELRqaYK5gy+bNIyAoQKBgQDL8wIFMX92t567gCl3eBHiKqnjP9erbIPT\n/CS9/het5Elrzh91K2gtf9Nz+pBI7OR6Nwc5pxn8Tjo31RJr4SpWCc2vF4L4FZfj\n+aH/HWUfLYY3fWvxLVrib4ikMckF2tLKEF7ePZND/Qr6pLch2LwLBKm5xtZCHNZp\ngavLUv+aIQKBgQCTW9Ua3zjqScNDLkv8TN1iA0VTamF4fAgpNoPjMKPi4Pi6ekUM\n4D8T1p+zlhotxlEvXMrAxgtQ7Krx9BtojS71kFvSLJ/XKLsIkkmoT2Tyb6Ud78gE\ng5R7VIiQFkOPCWEMmt0ski+5bNnoL8xXE3KItW0lnPgDtfo1dP+zFAriAQKBgGtq\neNTtZfnL6hFNBgoDNkANQl8LH/cMdz4uHdfnPOd8ReM+s7jNfNgB7Ae4n0eZZRit\nZOPLi9ckCGuhkEs7U0XvceJXGsa48L/Embq466qJGpidOT3UKnr6TVhVVE/+GWkN\nSDn66lYzrxWlrUJpWVjgQtgyzmQRtifpgObctvyhAoGAJXHbOVudhMrbVptEPagM\n0wLz9LjVYGcu3s17IlCW/JMfzA2T2zYrv7iJmARAf+mfJiF9GdmGDRuozUIbwHRF\n2dU6YvIXzFCIZUDSsPPk3pExxEJ6FQ6ulwxRFbeHT7M46HLTnub465xr3Ycls9QK\nuRKUB74z+oxKt/AjkU0028Q=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cmpt474-project-test@spring24cmpt474groupproject1.iam.gserviceaccount.com",
+  "client_id": "108545602213894486731",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cmpt474-project-test%40spring24cmpt474groupproject1.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

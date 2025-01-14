@@ -1,0 +1,74 @@
+安装部署Nacos：
+
+1. 启用计算引擎 API：前往 GCP 控制台，确保计算引擎 API 已经启用。
+2. 创建虚拟机
+	2.1 在 GCP 控制台中，导航至 Compute Engine > VM 实例。
+	2.2 点击 '创建实例'。
+	2.3 配置实例的详细信息，包括名称、区域、机器类型。Nacos 对资源的需求取决于你的使用情况，但对于测试环境，选择小型或中型实例通常就足够了。
+	2.4 在 '启动磁盘' 部分，选择一个操作系统镜像，Nacos 可以在大多数 Linux 发行版上运行，常见的选择有 CentOS 或 Ubuntu。
+	2.5 点击 创建。
+3. 设置防火墙规则
+	3.1 在 GCP 控制台中，导航到 VPC 网络 > 防火墙。
+	3.2 创建一个新的'防火墙规则'：
+			名称：随便
+			目标：指定的目标标记
+			目标标记：指定一个标签，例如 nacos-server。
+			来源 IP 范围：0.0.0.0/0（表示任何来源）。
+			允许的协议和端口：tcp:8848。
+	3.3 在 GCP 控制台中，导航到 Compute Engine > VM 实例。
+	3.4 点击你的实例名称，进入实例详情页面。点击修改
+	3.5 确保在 ’标签‘ 部分包含了上面设置的网络标签（nacos-server）。
+	3.6 保存
+	
+4. 连接到你的虚拟机
+	创建实例后，在"VM实例"页面，找到你的实例并点击SSH按钮，这将打开一个新的浏览器窗口或标签页以启动一个SSH会话。
+	
+5. 安装Java环境
+	Nacos需要Java环境，你可以通过以下命令安装Java：
+	sudo apt update
+	sudo apt install openjdk-11-jdk -y
+	
+6. 下载并安装Nacos
+	6.1 通过以下命令下载Nacos的最新版或指定版本：
+	wget https://github.com/alibaba/nacos/releases/download/1.4.1/nacos-server-1.4.1.tar.gz
+	
+	6.2 解压下载的文件：
+	tar -zxvf nacos-server-1.4.1.tar.gz
+	
+	6.3 进入Nacos目录并启动Nacos：
+	cd nacos/bin
+	bash startup.sh -m standalone
+	
+7. 在你的Web浏览器中访问http://[YOUR_VM_EXTERNAL_IP]:8848/nacos，
+将[YOUR_VM_EXTERNAL_IP]替换为你的VM实例的外部IP地址。
+默认情况下，登录Nacos控制台的用户名和密码都是nacos。
+
+
+更新微服务：
+1. 对应微服务的主程序 xxxApplication.java中加入：
+	import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+	@EnableDiscoveryClient
+
+2. 在你的 Spring Boot 应用的 pom.xml 文件中添加 Nacos Discovery 依赖。确保选择与你的 Spring Boot 版本兼容的依赖版本。可能部分微服务的pom.xml中可能还缺少其他依赖，可以复制acl中的：
+	<dependency>
+		<groupId>com.alibaba.cloud</groupId>
+		<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		<version>2.2.5.RELEASE</version>
+	</dependency>
+	
+3.  在application.yml中，可能还有部分bootstrap.yml：
+
+spring:
+  application:
+    name: 你的应用名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 你的Nacos服务器地址:8848	  （同上，VM实例的外部IP地址）
+		config:
+        server-addr: 你的Nacos服务器地址:8848     （同上，VM实例的外部IP地址）
+		
+4. 正常部署流程。
+	先在最外层运行：
+		mvn clean install package -Dmaven.test.skip=true
+	略
